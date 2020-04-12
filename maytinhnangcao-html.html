@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sinso.com :D</title>
+    <style>
+        #all{
+            background-color: #ffa5e6;
+            border-radius: 30px;
+            padding: 3px;
+            width: 172px;
+            border-radius: 6px;
+            margin: auto;
+        }
+        button{
+            width: 40px;
+            height: 40px;
+            margin-bottom: 1px;
+            border-radius: 5px;
+        }
+        #opfix{
+            width: 168px;
+            height: 60px;
+            background-color: #901919;
+            text-align: right;
+            color: #050300;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        #reset {
+            width: 84px;
+            height: auto;
+        }
+        #delete{
+            width: 84px;
+            height: auto;
+        }
+        #PAIN{
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="all">
+    <H3 ID="PAIN">MÁY TÍNH BỎ TÚI </H3><P>
+    <input id="opfix">
+    <br>
+    <button id="reset" onclick="clearScreen()">AC</button>
+    <button id="delete" onclick="deleteNumber()">DEL</button>
+    <br>
+    <button onclick="Number(7)">7</button>
+    <button onclick="Number(8)">8</button>
+    <button onclick="Number(9)">9</button>
+    <button onclick="Number('+')">+</button>
+    <br>
+    <button onclick="Number(4)">4</button>
+    <button onclick="Number(5)">5</button>
+    <button onclick="Number(6)">6</button>
+    <button onclick="Number('-')">-</button>
+    <br>
+    <button onclick="Number(1)">1</button>
+    <button onclick="Number(2)">2</button>
+    <button onclick="Number(3)">3</button>
+    <button onclick="Number('*')">x</button>
+    <br>
+    <button onclick="Number(0)">0</button>
+    <button onclick="Number('.')">.</button>
+    <button onclick="sam()">=</button>
+    <button onclick="Number('/')">/</button>
+    <br>
+</div>
+</body>
+<script>
+    function Number(value) {
+        document.getElementById("opfix").value += value;
+    }
+    function sam() {
+        let left = document.getElementById("opfix").value;
+        let done = eval(left);
+        display (done);
+    }
+    function display(value) {
+        document.getElementById("opfix").value = value;
+    }
+    function clearScreen() {
+        document.getElementById("opfix").value = 0;
+    }
+    function deleteNumber() {
+        let turn = document.getElementById("opfix").value;
+        let end = turn.substring(0, turn.length - 1);
+        display(end);
+    }
+</script>
+</html>
